@@ -6,10 +6,10 @@
 
 <div class="row">
     <div class="large-6 small-6 columns" ng-click="knowWhenWakeUp = true">
-        <p>I know when I want to <strong>wake up</strong></p>
+        <a class="button" ng-class="{success: knowWhenWakeUp}">I know when I want to <strong>wake up</strong></a>
     </div>
     <div class="large-6 small-6 columns" ng-click="knowWhenWakeUp = false">
-        <p>I know when I want to <strong>fall asleep</strong></p>
+        <a class="button" ng-class="{success: knowWhenWakeUp == false}">I know when I want to <strong>fall asleep</strong></a>
     </div>
 </div>
 
