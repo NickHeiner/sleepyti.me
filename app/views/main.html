@@ -1,15 +1,15 @@
 <h1>Sleepyti.me bedtime calculator</h1>
 
 <div class="row">
-    <div class="large-6 small-6 columns">
+    <div class="large-6 small-6 columns" ng-click="knowWhenWakeUp = true">
         <p>I know when I want to wake up</p>
     </div>
-    <div class="large-6 small-6 columns">
+    <div class="large-6 small-6 columns" ng-click="knowWhenWakeUp = false">
         <p>I want to fall asleep now. When should I wake up?</p>
     </div>
 </div>
 
-<div class="row">
+<div class="row" ng-show="knowWhenWakeUp">
     <div class="large-3 small-3 columns">
         I have to wake up at:
     </div>
@@ -22,4 +22,8 @@
     <div class="large-3 small-3 columns">
         <select ng-model="wakeup.am" ng-options="opt for opt in amPm"></select>
     </div>
+</div>
+
+<div class="row" ng-show="knowWhenWakeUp == false">
+    Wake up at 8 am fatass
 </div>
