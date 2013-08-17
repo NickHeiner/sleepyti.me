@@ -29,7 +29,13 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         yeoman: yeomanConfig,
-
+        sass: {
+          dist: {
+              files: {
+                  '<%= yeoman.app %>/styles/main.css': 'styles/main.scss'
+              }
+          }
+        },
         watch: {
             livereload: {
                 options: {
