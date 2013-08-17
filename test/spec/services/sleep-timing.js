@@ -48,11 +48,19 @@ describe('sleep-timing', function () {
     });
 
     it('should generate times to sleep given a time to wake up', function () {
-        expect(offsetFromWakeup(createMoment(9, 15))).to.eql([
-            createMoment(12, 1),
+        var actual = offsetFromWakeup(createMoment(9, 15));
+        var expected = [
+            createMoment(0, 1),
             createMoment(1, 31),
             createMoment(3, 1),
             createMoment(4, 31)
-        ])
+        ];
+
+        expect(actual).to.have.length(expected.length);
+
+        _.forEach(expected, function(expectedTime, index) {
+            expect(expectedTime.hour()).to.equal(actual[index].hour());
+            expect(expectedTime.minute()).to.equal(actual[index].minute());
+        });
     });
 });
