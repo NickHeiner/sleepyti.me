@@ -32,7 +32,7 @@ module.exports = function(grunt) {
         sass: {
           dist: {
               files: {
-                  '<%= yeoman.app %>/styles/main.css': '<%= yeoman.app %>/styles/main.scss'
+                  '<%= yeoman.app %>/styles/main.css': '<%= yeoman.app %>/stylesf/main.scss'
               }
           }
         },
@@ -275,7 +275,6 @@ module.exports = function(grunt) {
 
     grunt.registerTask('test', [
         'clean:server',
-        'concurrent:test',
         'connect:test',
         'karma'
     ]);
