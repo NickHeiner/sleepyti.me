@@ -48,11 +48,11 @@ describe('sleep-timing', function () {
     });
 
     it('should generate times to sleep given a time to wake up', function () {
-        expect(offsetFromWakeup(createMoment(10, 0))).to.eql([
-            createMoment(1, 0),
-            createMoment(2, 30),
-            createMoment(4, 17),
-            createMoment(5, 30),
+        expect(offsetFromWakeup(createMoment(9, 15))).to.eql([
+            createMoment(12, 1),
+            createMoment(1, 31),
+            createMoment(3, 1),
+            createMoment(4, 31)
         ])
     });
 });
