@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('sleepyti.meApp', [])
+    // TODO clean this out
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
