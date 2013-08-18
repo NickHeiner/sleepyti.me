@@ -2,8 +2,8 @@
 
 angular.module('sleepyti.meApp')
     .controller('MainCtrl', function($scope, offsetFromWakeup, offsetFromSleep, createMoment, defaultSleep, defaultWakeup) {
-        $scope.hours = _.range(1, 13);
-        $scope.minutes = _.range(1, 61);
+        $scope.hours = _.range(13);
+        $scope.minutes = _.range(60);
         $scope.amPm = ['AM', 'PM'];
 
         var defaultSleepMoment = defaultSleep(),

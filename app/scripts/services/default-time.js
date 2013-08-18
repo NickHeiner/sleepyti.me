@@ -1,11 +1,12 @@
 angular.module('sleepyti.meApp')
-    .factory('defaultSleep', function() {
+    .constant('DEFAULT_SLEEP_LENGTH_HOURS', 9)
+    .factory('defaultSleep', function(DEFAULT_SLEEP_TIME_MINS) {
         return function() {
-            return moment().hours(0);
+            return moment().add('minutes', DEFAULT_SLEEP_TIME_MINS);
         }
     })
-    .factory('defaultWakeup', function() {
+    .factory('defaultWakeup', function(DEFAULT_SLEEP_LENGTH_HOURS) {
         return function() {
-            return moment().hours(9);
+            return moment().hours(DEFAULT_SLEEP_LENGTH_HOURS);
         }
     });
