@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('sleepyti.meApp')
     .factory('createMoment', function() {
         return function(hour, minute) {
@@ -5,5 +7,5 @@ angular.module('sleepyti.meApp')
             result.hours(hour);
             result.minutes(minute);
             return result;
-        }
+        };
     });

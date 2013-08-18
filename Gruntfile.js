@@ -30,11 +30,11 @@ module.exports = function(grunt) {
     grunt.initConfig({
         yeoman: yeomanConfig,
         sass: {
-          dist: {
-              files: {
-                  '<%= yeoman.app %>/styles/main.css': '<%= yeoman.app %>/styles/main.scss'
-              }
-          }
+            dist: {
+                files: {
+                    '<%= yeoman.app %>/styles/main.css': '<%= yeoman.app %>/styles/main.scss'
+                }
+            }
         },
         watch: {
             livereload: {
@@ -108,7 +108,29 @@ module.exports = function(grunt) {
         },
         jshint: {
             options: {
-                jshintrc: '.jshintrc'
+                node: true,
+                browser: true,
+                esnext: true,
+                bitwise: true,
+                camelcase: true,
+                curly: true,
+                eqeqeq: true,
+                immed: true,
+                latedef: true,
+                newcap: true,
+                noarg: true,
+                quotmark: 'single',
+                regexp: true,
+                undef: true,
+                unused: true,
+                strict: true,
+                trailing: true,
+                smarttabs: true,
+                globals: {
+                    angular: true,
+                    moment: true,
+                    _: true
+                }
             },
             all: [
                 'Gruntfile.js',

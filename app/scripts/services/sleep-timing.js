@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('sleepyti.meApp')
     .constant('DEFAULT_SLEEP_TIME_MINS', 14)
     .constant('SLEEP_CYCLE_LENGTH', 90)
@@ -10,7 +12,7 @@ angular.module('sleepyti.meApp')
             return _.range(TIMES_COUNT).map(function(index) {
                 return moment(withFallAsleepOffset).subtract('minutes', WAKE_OFFSET_COEFFICIENTS[index] * SLEEP_CYCLE_LENGTH);
             });
-        }
+        };
     })
     .factory('offsetFromSleep', function(DEFAULT_SLEEP_TIME_MINS, TIMES_COUNT, SLEEP_CYCLE_LENGTH, SLEEP_OFFSET_COEFFICIENTS) {
         return function(sleepTime) {
@@ -18,5 +20,5 @@ angular.module('sleepyti.meApp')
             return _.range(TIMES_COUNT).map(function(index) {
                 return moment(withFallAsleepOffset).add('minutes', SLEEP_OFFSET_COEFFICIENTS[index] * SLEEP_CYCLE_LENGTH);
             });
-        }
+        };
     });
