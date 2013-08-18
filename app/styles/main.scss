@@ -16,5 +16,14 @@ iframe {
 }
 
 .time-offset {
-  font-size: emCalc(25);
+  @include label($label-padding, emCalc(25), #ccc, $label-radius);
 }
+
+.results-label {
+  margin-top: 20px;
+}
+
+.results-label > div {
+  margin-bottom: -15px;
+}
+
