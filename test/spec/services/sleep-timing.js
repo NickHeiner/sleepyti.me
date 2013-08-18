@@ -43,8 +43,8 @@ describe('sleep-timing', function () {
         expect(actual).to.have.length(expected.length);
 
         _.forEach(expected, function(expectedTime, index) {
-           expect(expectedTime.hour()).to.equal(actual[index].hour());
-           expect(expectedTime.minute()).to.equal(actual[index].minute());
+           expect(expectedTime.hour(), 'hour for moment ' + index).to.equal(actual[index].hour());
+           expect(expectedTime.minute(), 'minute for moment ' + index).to.equal(actual[index].minute());
         });
     });
 
@@ -60,8 +60,8 @@ describe('sleep-timing', function () {
         expect(actual).to.have.length(expected.length);
 
         _.forEach(expected, function(expectedTime, index) {
-            expect(expectedTime.hour()).to.equal(actual[index].hour());
-            expect(expectedTime.minute()).to.equal(actual[index].minute());
+            expect(expectedTime.hour(), 'hour for moment ' + index).to.equal(actual[index].hour());
+            expect(expectedTime.minute(), 'minute for moment ' + index).to.equal(actual[index].minute());
         });
     });
 });

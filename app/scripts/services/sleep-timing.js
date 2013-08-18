@@ -25,6 +25,6 @@ angular.module('sleepyti.meApp')
     })
     .factory('offsetFromSleep', function(offset, SLEEP_OFFSET_COEFFICIENTS) {
         return function(sleepTime) {
-            return offset(sleepTime, false, SLEEP_OFFSET_COEFFICIENTS);
+            return offset(sleepTime, 'add', SLEEP_OFFSET_COEFFICIENTS);
         };
     });
