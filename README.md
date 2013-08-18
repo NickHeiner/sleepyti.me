@@ -13,7 +13,9 @@ developing. The following commands are available to you:
 
 `grunt server`: Fire up a server so you can develop locally. It's equipped with live-reload, so when you make changes
 to files the page will refresh automatically.
+
 `grunt test`: Run the tests.
+
 `grunt dist`: Minify everything and bundle it up to be ready for deployment.
 
 For more information, see Gruntfile.js.
