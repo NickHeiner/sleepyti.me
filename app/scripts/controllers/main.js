@@ -1,11 +1,8 @@
 'use strict';
 
 angular.module('sleepyti.meApp')
-    .controller('MainCtrl', function($scope, offsetFromWakeup, offsetFromSleep, createMoment, defaultSleep,
-                                     defaultWakeup, DEFAULT_SLEEP_TIME_MINS, SLEEP_CYCLE_LENGTH) {
-        $scope.hours = _.range(13);
-        $scope.minutes = _.range(60);
-        $scope.amPm = ['AM', 'PM'];
+    .controller('MainCtrl', function($scope, offsetFromWakeup, offsetFromSleep, createMoment, defaultSleep, defaultWakeup, DEFAULT_SLEEP_TIME_MINS, SLEEP_CYCLE_LENGTH) {
+
 
         $scope.constants = {
             DEFAULT_SLEEP_TIME_MINS: DEFAULT_SLEEP_TIME_MINS,
@@ -15,23 +12,35 @@ angular.module('sleepyti.meApp')
         var defaultSleepMoment = defaultSleep(),
             defaultWakeupMoment = defaultWakeup();
 
-        $scope.wakeup = {
-            hour: defaultWakeupMoment.hours() % 12,
-            minute: defaultWakeupMoment.minutes(),
-            am: defaultWakeupMoment.hours() > 12 ? 'PM' : 'AM'
+        $scope.baseTimes = {
+            wakeup: {
+                hour: defaultWakeupMoment.hours() % 12,
+                minute: defaultWakeupMoment.minutes(),
+                am: defaultWakeupMoment.hours() > 12 ? 'PM' : 'AM'
+            },
+            sleep: {
+                hour: defaultSleepMoment.hours() % 12,
+                minute: defaultSleepMoment.minutes(),
+                am: defaultSleepMoment.hours() > 12 ? 'PM' : 'AM'
+            }
         };
 
-        $scope.sleep = {
-            hour: defaultSleepMoment.hours() % 12,
-            minute: defaultSleepMoment.minutes(),
-            am: defaultSleepMoment.hours() > 12 ? 'PM' : 'AM'
-        };
+        $scope.offsets = {
+            goToSleepTimes: [],
+            wakeupTimes: []
+        }
 
-        $scope.$watch('[wakeup.hour, wakeup.minute]', function() {
-            $scope.sleepTimes = offsetFromWakeup(createMoment($scope.wakeup.hour, $scope.wakeup.minute));
+        $scope.$watch('[baseTimes.wakeup.hour, baseTimes.wakeup.minute]', function() {
+            $scope.offsets.goToSleepTimes = offsetFromWakeup(createMoment(
+                $scope.baseTimes.wakeup.hour,
+                $scope.baseTimes.wakeup.minute
+            ));
         }, true);
 
-        $scope.$watch('[sleep.hour, sleep.minute]', function() {
-            $scope.wakeupTimes = offsetFromSleep(createMoment($scope.sleep.hour, $scope.sleep.minute));
+        $scope.$watch('[baseTimes.sleep.hour, baseTimes.sleep.minute]', function() {
+            $scope.offsets.wakeupTimes = offsetFromSleep(createMoment(
+                $scope.baseTimes.sleep.hour,
+                $scope.baseTimes.sleep.minute
+            ));
         }, true);
     });

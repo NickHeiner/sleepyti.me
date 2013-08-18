@@ -4,6 +4,7 @@
     </div>
 </div>
 
+
 <div class="row">
     <div class="large-6 small-6 columns" ng-click="knowWhenWakeUp = true">
         <a class="button" ng-class="{success: knowWhenWakeUp}">I know when I want to <strong>wake up</strong></a>
@@ -15,50 +16,20 @@
 </div>
 
 <div ng-show="knowWhenWakeUp">
-    <div class="row">
-        <div class="large-3 small-3 columns">
-            I have to wake up at:
-        </div>
-        <div class="large-3 small-3 columns">
-            <select ng-model="wakeup.hour" ng-options="h for h in hours"></select>
-        </div>
-        <div class="large-3 small-3 columns">
-            <select ng-model="wakeup.minute" ng-options="m for m in minutes"></select>
-        </div>
-        <div class="large-3 small-3 columns">
-            <select ng-model="wakeup.am" ng-options="opt for opt in amPm"></select>
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-12 small-12 columns">
-            <p>You should go to sleep at:</p>
-
-            <p ng-repeat="sleepTime in sleepTimes">{{sleepTime.toDate() | date:'h:mm a'}}</p>
-        </div>
+    <div time-display
+         offsets="offsets.goToSleepTimes"
+         prompt-text="I have to wake up at"
+         results-label="You should go to sleep at"
+         base-time="baseTimes.wakeup">
     </div>
 </div>
 
 <div ng-show="knowWhenWakeUp == false">
-    <div class="row">
-        <div class="large-3 small-3 columns">
-            I want to go to sleep at:
-        </div>
-        <div class="large-3 small-3 columns">
-            <select ng-model="sleep.hour" ng-options="h for h in hours"></select>
-        </div>
-        <div class="large-3 small-3 columns">
-            <select ng-model="sleep.minute" ng-options="m for m in minutes"></select>
-        </div>
-        <div class="large-3 small-3 columns">
-            <select ng-model="sleep.am" ng-options="opt for opt in amPm"></select>
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-12 small-12 columns">
-            <p>You should wake up at:</p>
-
-            <p ng-repeat="wakeupTime in wakeupTimes">{{wakeupTime.toDate() | date:'HH:mm a'}}</p>
-        </div>
+    <div time-display
+         offsets="offsets.wakeupTimes"
+         prompt-text="I want to go to sleep at"
+         results-label="You should wake up at"
+         base-time="baseTimes.sleep">
     </div>
 </div>
 
@@ -71,7 +42,7 @@
         </div>
         <div class="large-offset-1 small-offset-1 large-11 small-11 columns">
             <ul>
-                <li>It takes the average human {{constants.DEFAULT_SLEEP_TIME_MINS}} minutes to fall asleep.</li>
+                <li>Most people take {{constants.DEFAULT_SLEEP_TIME_MINS}} minutes to fall asleep.</li>
                 <li>An average sleep cycle is {{constants.SLEEP_CYCLE_LENGTH}} minutes.</li>
                 <li>A good night's sleep consists of 5-6 complete cycles.</li>
             </ul>
