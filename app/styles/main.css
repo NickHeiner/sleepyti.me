@@ -4043,7 +4043,8 @@ a.th {
   height: 25px; }
 
 .fb-like-button {
-  height: 25px; }
+  height: 25px;
+  margin-left: 13px; }
 
 .prompt-text {
   margin-bottom: 10px; }
