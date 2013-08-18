@@ -1,10 +1,16 @@
 'use strict';
 
 angular.module('sleepyti.meApp')
-    .controller('MainCtrl', function($scope, offsetFromWakeup, offsetFromSleep, createMoment, defaultSleep, defaultWakeup) {
+    .controller('MainCtrl', function($scope, offsetFromWakeup, offsetFromSleep, createMoment, defaultSleep,
+                                     defaultWakeup, DEFAULT_SLEEP_TIME_MINS, SLEEP_CYCLE_LENGTH) {
         $scope.hours = _.range(13);
         $scope.minutes = _.range(60);
         $scope.amPm = ['AM', 'PM'];
+
+        $scope.constants = {
+            DEFAULT_SLEEP_TIME_MINS: DEFAULT_SLEEP_TIME_MINS,
+            SLEEP_CYCLE_LENGTH: SLEEP_CYCLE_LENGTH
+        }
 
         var defaultSleepMoment = defaultSleep(),
             defaultWakeupMoment = defaultWakeup();
