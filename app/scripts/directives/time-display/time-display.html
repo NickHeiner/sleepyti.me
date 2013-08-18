@@ -1,30 +1,38 @@
-<div class="row">
-    <div class="large-3 small-3 columns">
-        {{promptText}}:
+<div class="panel">
+    <div class="row">
+        <div class="large-12 small-12 columns">
+            {{promptText}}:
+        </div>
     </div>
-    <div class="large-3 small-3 columns">
-        <select ng-model="baseTime.hour" ng-options="h for h in hours"></select>
+    <div class="row">
+        <div class="large-4 small-4 columns">
+            <select ng-model="baseTime.hour" ng-options="h for h in hours"></select>
+        </div>
+        <div class="large-4 small-4 columns">
+            <select ng-model="baseTime.minute" ng-options="m for m in minutes"></select>
+        </div>
+        <div class="large-4 small-4 columns">
+            <select ng-model="baseTime.am" ng-options="opt for opt in amPm"></select>
+        </div>
     </div>
-    <div class="large-3 small-3 columns">
-        <select ng-model="baseTime.minute" ng-options="m for m in minutes"></select>
+    <div class="row">
+        <div class="large-12 small-12 columns">
+            <p>{{resultsLabel}}:</p>
+        </div>
     </div>
-    <div class="large-3 small-3 columns">
-        <select ng-model="baseTime.am" ng-options="opt for opt in amPm"></select>
-    </div>
-</div>
-<div class="row">
-    <div class="large-12 small-12 columns">
-        <p>{{resultsLabel}}:</p>
-
-        <div ng-repeat="time in offsets" class="time-list">
-            <span class="radius secondary label">{{time.toDate() | date:'h:mm a'}}</span>
-            <span ng-hide="$last">or</span>
+    <div class="row">
+        <div class="large-12 small-12 columns">
+            <div ng-repeat="time in offsets" class="time-list">
+                <span class="radius secondary label">{{time.toDate() | date:'h:mm a'}}</span>
+                <span ng-hide="$last">or</span>
+            </div>
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="large-12 small-12 columns">
-        <p>Waking up in the middle of a sleep cycle leaves you feeling tired and groggy, but waking up in between cycles
-            lets you wake up feeling refreshed and alert!</p>
+    <div class="row">
+        <div class="large-12 small-12 columns">
+            <p>Waking up in the middle of a sleep cycle leaves you feeling tired and groggy, but waking up in between
+                cycles
+                lets you wake up feeling refreshed and alert!</p>
+        </div>
     </div>
-</div>
