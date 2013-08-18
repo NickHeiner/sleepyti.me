@@ -9,7 +9,7 @@
             <select ng-model="baseTime.hour" ng-options="h for h in hours"></select>
         </div>
         <div class="large-4 small-4 columns">
-            <select ng-model="baseTime.minute" ng-options="m for m in minutes"></select>
+            <select ng-model="baseTime.minute" ng-options="padMinute(m) for m in minutes"></select>
         </div>
         <div class="large-4 small-4 columns">
             <select ng-model="baseTime.am" ng-options="opt for opt in amPm"></select>

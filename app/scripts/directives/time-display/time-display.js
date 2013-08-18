@@ -14,6 +14,10 @@ angular.module('sleepyti.meApp')
                 $scope.hours = _.range(13);
                 $scope.minutes = _.range(60);
                 $scope.amPm = ['AM', 'PM'];
+
+                $scope.padMinute = function(min) {
+                    return min < 10 ? '0' + min : min;
+                }
             }
         };
     });
