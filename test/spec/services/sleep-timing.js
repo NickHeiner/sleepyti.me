@@ -1,5 +1,6 @@
 'use strict';
 
+/*jshint -W079 */
 var expect = chai.expect;
 
 describe('sleep-timing', function () {

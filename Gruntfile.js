@@ -135,7 +135,30 @@ module.exports = function(grunt) {
             all: [
                 'Gruntfile.js',
                 '<%= yeoman.app %>/scripts/{,*/}*.js'
-            ]
+            ],
+            test: {
+                files: [{
+                    src: 'test/**/*.js'
+                }],
+                options: {
+                    camelcase: false,
+                    globals: {
+                        after: false,
+                        afterEach: false,
+                        before: false,
+                        beforeEach: false,
+                        browser: false,
+                        describe: false,
+                        expect: false,
+                        inject: false,
+                        it: false,
+                        spyOn: false,
+                        _: true,
+                        chai: true,
+                        moment: true
+                    }
+                }
+            }
         },
         // not used since Uglify task does concat,
         // but still available if needed
@@ -296,6 +319,7 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('test', [
+        'jshint',
         'clean:server',
         'connect:test',
         'karma'
