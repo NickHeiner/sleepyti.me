@@ -4048,7 +4048,7 @@ a.th {
 .prompt-text {
   margin-bottom: 10px; }
 
-.footer p {
+.footer p, .ads p {
   font-size: 0.875em;
   line-height: 1.35;
   font-style: italic; }
