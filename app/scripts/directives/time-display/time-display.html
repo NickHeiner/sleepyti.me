@@ -22,17 +22,20 @@
     </div>
     <div class="row">
         <div class="large-12 small-12 columns">
-            <div ng-repeat="time in offsets" class="time-list">
-                <span class="radius secondary label">{{time.toDate() | date:'h:mm a'}}</span>
-                <span ng-hide="$last">or</span>
-            </div>
+
+            <ul ng-class="'large-block-grid-' + offsets.length">
+                <li ng-repeat="time in offsets" class="time-list">
+                    <span class="time-offset radius label">{{time.toDate() | date:'h:mm a'}}</span>
+                </li>
+            </ul>
+
         </div>
     </div>
 </div>
-    <div class="row">
-        <div class="large-12 small-12 columns">
-            <p>Waking up in the middle of a sleep cycle leaves you feeling tired and groggy, but waking up in between
-                cycles
-                lets you wake up feeling refreshed and alert!</p>
-        </div>
+<div class="row">
+    <div class="large-12 small-12 columns">
+        <p>Waking up in the middle of a sleep cycle leaves you feeling tired and groggy, but waking up in between
+            cycles
+            lets you wake up feeling refreshed and alert!</p>
     </div>
+</div>
