@@ -47,6 +47,12 @@ module.exports = function(grunt) {
                     '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
                     '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
                 ]
+            },
+            sass: {
+                files: [
+                    '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.scss'
+                ],
+                tasks: 'sass'
             }
         },
         connect: {
