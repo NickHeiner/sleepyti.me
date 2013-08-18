@@ -4033,3 +4033,12 @@ a.th {
 
 .time-list {
   display: inline; }
+
+iframe {
+  border: none;
+  overflow: hidden; }
+
+.footer p {
+  font-size: 0.875em;
+  line-height: 1.35;
+  font-style: italic; }

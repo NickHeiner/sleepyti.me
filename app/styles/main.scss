@@ -3,3 +3,14 @@
 .time-list {
   display: inline;
 }
+
+iframe {
+  border: none;
+  overflow: hidden;
+}
+
+.footer p {
+  font-size: $paragraph-aside-font-size;
+  line-height: $paragraph-aside-line-height;
+  font-style: $paragraph-aside-font-style;
+}
