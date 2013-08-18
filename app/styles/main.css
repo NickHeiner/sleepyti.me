@@ -4034,9 +4034,13 @@ a.th {
 .time-list {
   display: inline; }
 
-iframe {
+.footer iframe {
   border: none;
   overflow: hidden; }
+
+.twitter-follow-button {
+  width: 130px;
+  height: 25px; }
 
 .footer p {
   font-size: 0.875em;
