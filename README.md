@@ -7,6 +7,8 @@ angular, grunt, yeoman, karma, sass, and bower.
 
 ### Development
 
+This project requires node.js. I developed it with v0.10.13; other stable versions may work as well.
+
 Clone the project from github, then run `npm install` to install the dev dependencies, which include a local static
 assets server. Next, run `bower install` to pull down frontend dependencies. At this point, you're ready to begin
 developing. The following commands are available to you:
